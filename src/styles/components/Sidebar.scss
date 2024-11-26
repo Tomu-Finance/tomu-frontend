@@ -1,0 +1,8 @@
+@use '../../styles/main.scss' as *;
+
+.sidebar {
+  background-color: $greenish-white;
+  grid-row: 1 / -1;
+  grid-column: 1 / 2;
+  border-right: toRem(1) solid #d1cece;
+}

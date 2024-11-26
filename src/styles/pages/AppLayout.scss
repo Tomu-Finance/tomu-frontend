@@ -1,0 +1,17 @@
+@use '../../styles/main.scss' as *;
+
+.appLayout {
+  display: grid;
+  grid-template-columns: toRem(186) 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+
+  &__main {
+    background-color: $greenish-white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    grid-column: 2 / 3;
+    grid-row: 2 / -1;
+    overflow-y: scroll;
+  }
+}

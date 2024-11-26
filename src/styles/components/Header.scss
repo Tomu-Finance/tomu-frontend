@@ -1,0 +1,9 @@
+@use '../../styles/main.scss' as *;
+
+.header {
+  background-color: $greenish-white;
+  height: toRem(45);
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  border-bottom: toRem(1) solid #d1cece;
+}

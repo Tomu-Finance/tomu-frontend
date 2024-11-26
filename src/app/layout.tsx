@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/main.scss';
+import '../styles/pages/AppLayout.scss';
+import Header from '@/components/Header';
+import Sidebar from '@/components/Sidebar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,8 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable}`}>{children}</body>
+    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
+      <body className="appLayout">
+        <Header />
+        <Sidebar />
+        <main className="appLayout__main">{children}</main>
+      </body>
     </html>
   );
 }
