@@ -4,5 +4,64 @@
   background-color: $greenish-white;
   grid-row: 1 / -1;
   grid-column: 1 / 2;
-  border-right: toRem(1) solid #d1cece;
+  border: toRem(0.8) solid $greenish-border;
+
+  margin-top: toRem(9);
+  margin-left: toRem(11);
+  margin-bottom: toRem(9);
+  border-radius: toRem(20);
+  text-align: center;
+
+  padding-top: toRem(27);
+  padding-left: toRem(22);
+  padding-right: toRem(11);
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__logo {
+      width: toRem(86.27);
+      height: toRem(20);
+    }
+
+    &__grid {
+      width: toRem(24);
+      height: toRem(24);
+      cursor: pointer;
+    }
+  }
+
+  &__navigation {
+    margin-top: toRem(26);
+    @include flex_col(toRem(16));
+
+    &__tab {
+      width: 100%;
+      height: toRem(40);
+      @include flex(flex-start, center, toRem(10));
+      border-radius: toRem(5);
+      cursor: pointer;
+      padding: toRem(5);
+
+      &.active {
+        background-color: $light-green;
+        border: toRem(0.6) solid $greenish-border;
+      }
+
+      &__icon {
+        width: toRem(30);
+        height: toRem(30);
+      }
+
+      &__text {
+        font-family: var(--font-inter);
+        font-size: toRem(16);
+        font-weight: 400;
+        line-height: toRem(16);
+        text-align: left;
+      }
+    }
+  }
 }
