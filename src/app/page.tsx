@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomePage = () => {
-  return <div>Tomu</div>;
+  return <div>Portfolio</div>;
 };
 
 export default HomePage;
