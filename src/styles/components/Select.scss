@@ -12,7 +12,7 @@
     font-family: var(--font-inter);
     font-size: toRem(16);
     font-weight: 400;
-    line-height: toRem(16);
+    line-height: toRem(30);
     text-align: left;
     color: $primary-black;
 
@@ -21,6 +21,10 @@
     -moz-appearance: none;
     background-color: transparent;
     cursor: pointer;
+
+    // &.dynamic {
+    //   padding-right: toRem(30);
+    // }
 
     &::-ms-expand {
       display: none;

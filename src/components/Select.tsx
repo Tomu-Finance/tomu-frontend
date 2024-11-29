@@ -6,16 +6,19 @@ interface SelectProps {
   height: number;
   width: number;
   iconColor: string;
+  type?: string;
 }
 
-const Select = ({ text, height, width, iconColor }: SelectProps) => {
+const Select = ({ text, height, width, iconColor, type }: SelectProps) => {
   // Function to convert px to rem
   const pxToRem = (px: number) => `${px / 16}rem`;
 
   return (
     <div className="selectWrapper">
       <select
-        className="selectWrapper__select"
+        className={`selectWrapper__select ${
+          type === 'dynamic' ? 'dynamic' : ''
+        }`}
         defaultValue=""
         style={{
           height: pxToRem(height),
@@ -25,9 +28,9 @@ const Select = ({ text, height, width, iconColor }: SelectProps) => {
         <option value="" disabled>
           {text}
         </option>
-        <option value="category1">Option 1</option>
-        <option value="category2">Option 2</option>
-        <option value="category3">Option 3</option>
+        <option value="category1">Option</option>
+        <option value="category2">Option</option>
+        <option value="category3">Option</option>
       </select>
       <svg
         width="18"

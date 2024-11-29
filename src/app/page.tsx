@@ -4,6 +4,7 @@ import eye from '../assets/svgs/eye.svg';
 import send from '../assets/svgs/send.svg';
 import deposit from '../assets/svgs/received.svg';
 import Image from 'next/image';
+import Select from '@/components/Select';
 
 const HomePage = () => {
   return (
@@ -56,7 +57,25 @@ const HomePage = () => {
               Edit connections
             </button>
           </div>
-          <div></div>
+          <div className="portfolio__top__bottom">
+            <div className="portfolio__top__bottom__top">
+              <div className="portfolio__top__bottom__top__left">
+                <p className="portfolio__top__bottom__top__left__heading">
+                  Portfolio Performance
+                </p>
+                <div className="portfolio__top__bottom__top__left__increase">
+                  2.58%+
+                </div>
+              </div>
+              <Select
+                text="Daily"
+                height={38}
+                width={103}
+                iconColor="#00140F"
+                type="dynamic"
+              />
+            </div>
+          </div>
         </div>
         <div className="portfolio__top__right"></div>
       </div>

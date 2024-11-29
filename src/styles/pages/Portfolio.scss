@@ -147,6 +147,44 @@
       }
     }
 
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      padding-top: toRem(10);
+
+      &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__left {
+          @include flex(flex-start, center, toRem(10));
+          &__heading {
+            color: $primary-black;
+            font-family: var(--font-inter);
+            font-size: toRem(20);
+            font-style: normal;
+            font-weight: 500;
+            line-height: toRem(20);
+          }
+
+          &__increase {
+            border-radius: toRem(100);
+            background-color: #ccfff1;
+            padding: toRem(5) toRem(10);
+            width: fit-content;
+
+            color: #00af7e;
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-style: normal;
+            font-weight: 400;
+            line-height: toRem(16);
+            text-align: center;
+          }
+        }
+      }
+    }
+
     &__right {
       min-width: 54.52%;
       min-height: toRem(519);
