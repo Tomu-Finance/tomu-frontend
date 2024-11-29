@@ -1,0 +1,39 @@
+@use '../../styles/main.scss' as *;
+
+.portfolio {
+  padding-top: toRem(28);
+  padding-left: toRem(16);
+  padding-right: toRem(16);
+  padding-bottom: toRem(9);
+  @include flex_col(toRem(11));
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+      min-width: 44.52%;
+      min-height: toRem(519);
+      border-radius: toRem(20);
+      background-color: transparent;
+      border: toRem(0.8) solid $greenish-border;
+    }
+
+    &__right {
+      min-width: 54.52%;
+      min-height: toRem(519);
+      border-radius: toRem(20);
+      background-color: transparent;
+      border: toRem(0.8) solid $greenish-border;
+    }
+  }
+
+  &__bottom {
+    min-width: 100%;
+    min-height: toRem(519);
+    border-radius: toRem(20);
+    background-color: transparent;
+    border: toRem(0.8) solid $greenish-border;
+  }
+}
