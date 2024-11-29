@@ -12,12 +12,139 @@
     align-items: center;
     justify-content: space-between;
 
-    &__left {
+    &__leftWrapper {
       min-width: 44.52%;
       min-height: toRem(519);
       border-radius: toRem(20);
       background-color: transparent;
       border: toRem(0.8) solid $greenish-border;
+
+      padding-top: toRem(18);
+      padding-left: toRem(21);
+      padding-bottom: toRem(21);
+      padding-right: toRem(17);
+
+      @include flex_col(toRem(0));
+    }
+
+    &__left {
+      padding-bottom: toRem(25);
+      border-bottom: toRem(0.8) solid $greenish-border;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      &__left {
+        @include flex_col(toRem(10));
+
+        &__info {
+          @include flex(flex-start, center, toRem(8));
+          &__heading {
+            font-family: var(--font-inter);
+            font-size: toRem(20);
+            font-weight: 500;
+            line-height: toRem(16);
+            text-align: left;
+            color: $secondary-black;
+          }
+
+          &__eyeIcon {
+            width: toRem(20);
+            height: toRem(20);
+          }
+        }
+
+        &__total {
+          margin-top: toRem(4);
+          font-family: var(--font-inter);
+          font-size: toRem(48);
+          font-weight: 500;
+          line-height: toRem(58);
+          text-align: left;
+          color: $primary-black;
+
+          &__span {
+            color: $greenish-grey;
+          }
+        }
+
+        &__increase {
+          border-radius: toRem(100);
+          background-color: #ccfff1;
+          padding: toRem(5) toRem(10);
+          width: fit-content;
+
+          color: #00af7e;
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-style: normal;
+          font-weight: 400;
+          line-height: toRem(16);
+          text-align: center;
+        }
+
+        &__buttonWrapper {
+          margin-top: toRem(10);
+          @include flex(flex-start, center, toRem(20));
+
+          &__button {
+            box-sizing: border-box;
+            @include flex(center, center, toRem(10));
+            outline: none;
+            border-radius: toRem(100);
+            box-shadow: toRem(4) toRem(4) toRem(20) toRem(0)
+              rgba(138, 153, 149, 0.3) inset;
+            width: toRem(130);
+            height: toRem(44);
+            cursor: pointer;
+
+            &.withdraw {
+              border: toRem(3) solid #0284f5;
+              background: #329fff;
+            }
+
+            &.deposit {
+              border: toRem(3) solid #ff0a78;
+              background: #ff4599;
+            }
+
+            &__icon {
+              width: toRem(18.46);
+              height: toRem(18.46);
+            }
+
+            &__text {
+              font-family: var(--font-inter);
+              font-size: toRem(16);
+              font-weight: 400;
+              line-height: toRem(16);
+              color: #fafffe;
+            }
+          }
+        }
+      }
+
+      &__rightButton {
+        box-sizing: border-box;
+        outline: none;
+        border-radius: toRem(100);
+        box-shadow: toRem(4) toRem(4) toRem(20) toRem(0)
+          rgba(138, 153, 149, 0.3) inset;
+        width: toRem(160);
+        height: toRem(44);
+        cursor: pointer;
+
+        border: toRem(3) solid #00af7e;
+        background: #00e5a4;
+
+        color: $primary-black;
+        font-family: var(--font-inter);
+        font-size: toRem(16);
+        font-style: normal;
+        font-weight: 400;
+        line-height: toRem(16);
+        text-align: center;
+      }
     }
 
     &__right {
