@@ -5,6 +5,10 @@ import send from '../assets/svgs/send.svg';
 import deposit from '../assets/svgs/received.svg';
 import Image from 'next/image';
 import Select from '@/components/Select';
+import tecImage from '../assets/images/tecommons.png';
+import boost from '../assets/images/boost.png';
+import depositIcon from '../assets/svgs/deposit.svg';
+import withdraw from '../assets/svgs/withdrawal.svg';
 
 const HomePage = () => {
   return (
@@ -77,7 +81,183 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="portfolio__top__right"></div>
+        <div className="portfolio__top__right">
+          <div className="portfolio__top__right__heading">
+            <p className="portfolio__top__right__heading__text">Assets</p>
+            <div className="portfolio__top__right__heading__increase">
+              2.58%+
+            </div>
+          </div>
+
+          <p className="portfolio__top__right__details">In-app wallet . $120</p>
+
+          <div className="portfolio__top__right__table">
+            <div className="portfolio__top__right__table__header">
+              <p className="portfolio__top__right__table__header__text">
+                Chain
+              </p>
+              <p className="portfolio__top__right__table__header__text token">
+                Token
+              </p>
+              <p className="portfolio__top__right__table__header__text price">
+                Price
+              </p>
+              <p className="portfolio__top__right__table__header__text amount">
+                Amount
+              </p>
+              <p className="portfolio__top__right__table__header__text value">
+                Value
+              </p>
+              <p className="portfolio__top__right__table__header__text actions">
+                Actions
+              </p>
+            </div>
+            <div className="portfolio__top__right__table__row">
+              <p className="portfolio__top__right__table__row__text chain">
+                GNO
+              </p>
+              <div className="portfolio__top__right__table__row__wrapper">
+                <Image
+                  src={tecImage}
+                  className="portfolio__top__right__table__row__wrapper__icon"
+                  alt=""
+                />
+                <p className="portfolio__top__right__table__row__wrapper__text">
+                  TEC Token
+                </p>
+              </div>
+              <p className="portfolio__top__right__table__row__text price">
+                $0.311192
+              </p>
+              <p className="portfolio__top__right__table__row__text amount">
+                668.787
+              </p>
+              <p className="portfolio__top__right__table__row__text value">
+                $208.12
+              </p>
+              <div className="portfolio__top__right__table__row__iconWrapper">
+                <Image
+                  src={withdraw}
+                  className="portfolio__top__right__table__row__iconWrapper__icon"
+                  alt="withdraw icon"
+                />
+                <Image
+                  src={depositIcon}
+                  className="portfolio__top__right__table__row__iconWrapper__icon"
+                  alt="deposit icon"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="portfolio__top__right__details bottom">
+              Seamless Protocol . $120
+            </p>
+
+            <div className="portfolio__top__right__table bottom">
+              <div className="portfolio__top__right__table__header">
+                <p className="portfolio__top__right__table__header__text">
+                  Chain
+                </p>
+                <p className="portfolio__top__right__table__header__text token">
+                  Token
+                </p>
+                <p className="portfolio__top__right__table__header__text price">
+                  Price
+                </p>
+                <p className="portfolio__top__right__table__header__text amount">
+                  Amount
+                </p>
+                <p className="portfolio__top__right__table__header__text value">
+                  Value
+                </p>
+                <p className="portfolio__top__right__table__header__text actions">
+                  Actions
+                </p>
+              </div>
+              <div className="portfolio__top__right__table__row">
+                <p className="portfolio__top__right__table__row__text chain">
+                  BASE
+                </p>
+                <div className="portfolio__top__right__table__row__wrapper">
+                  <Image
+                    src={boost}
+                    className="portfolio__top__right__table__row__wrapper__icon"
+                    alt=""
+                  />
+                  <p className="portfolio__top__right__table__row__wrapper__text">
+                    Boost wstETH
+                  </p>
+                </div>
+                <p className="portfolio__top__right__table__row__text price">
+                  $2,543
+                </p>
+                <p className="portfolio__top__right__table__row__text amount">
+                  0.005
+                </p>
+                <p className="portfolio__top__right__table__row__text value">
+                  $12.715
+                </p>
+                <div className="portfolio__top__right__table__row__iconWrapper">
+                  <Image
+                    src={withdraw}
+                    className="portfolio__top__right__table__row__iconWrapper__icon"
+                    alt="withdraw icon"
+                  />
+                  <Image
+                    src={depositIcon}
+                    className="portfolio__top__right__table__row__iconWrapper__icon"
+                    alt="deposit icon"
+                  />
+                </div>
+              </div>
+
+              <div className="portfolio__top__right__table__row">
+                <p className="portfolio__top__right__table__row__text chain">
+                  BASE
+                </p>
+                <div className="portfolio__top__right__table__row__wrapper">
+                  <Image
+                    src={boost}
+                    className="portfolio__top__right__table__row__wrapper__icon"
+                    alt=""
+                  />
+                  <p className="portfolio__top__right__table__row__wrapper__text">
+                    Boost wstETH
+                  </p>
+                </div>
+                <p className="portfolio__top__right__table__row__text price">
+                  $2,543
+                </p>
+                <p className="portfolio__top__right__table__row__text amount">
+                  0.005
+                </p>
+                <p className="portfolio__top__right__table__row__text value">
+                  $12.715
+                </p>
+                <div className="portfolio__top__right__table__row__iconWrapper">
+                  <Image
+                    src={withdraw}
+                    className="portfolio__top__right__table__row__iconWrapper__icon"
+                    alt="withdraw icon"
+                  />
+                  <Image
+                    src={depositIcon}
+                    className="portfolio__top__right__table__row__iconWrapper__icon"
+                    alt="deposit icon"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="portfolio__top__right__bottom">
+              <button className="portfolio__top__right__bottom__bottomButton">
+                Show more
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="portfolio__bottom"></div>
     </div>
