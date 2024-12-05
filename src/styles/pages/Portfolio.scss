@@ -383,5 +383,187 @@
     border-radius: toRem(20);
     background-color: transparent;
     border: toRem(0.8) solid $greenish-border;
+
+    padding: toRem(20);
+
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: toRem(36);
+
+      &__heading {
+        font-family: var(--font-inter);
+        font-size: toRem(20);
+        font-weight: 500;
+        line-height: toRem(20);
+        text-align: left;
+        color: #000000;
+      }
+
+      &__right {
+        width: toRem(301);
+        display: flex;
+        align-items: center;
+        &__tab {
+          padding-bottom: toRem(7);
+
+          &.left {
+            width: toRem(132);
+            border-bottom: toRem(0.8) solid #c0d3ce;
+            cursor: pointer;
+          }
+
+          &.right {
+            width: toRem(169);
+            border-bottom: toRem(0.8) solid #c0d3ce;
+            cursor: pointer;
+          }
+
+          &.active {
+            border-bottom: toRem(5) solid #0edda2;
+            padding-bottom: toRem(3.5);
+          }
+
+          &__text {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(20);
+            text-align: center;
+
+            &.active {
+              color: #0edda2;
+            }
+          }
+        }
+      }
+    }
+
+    &__table {
+      margin-top: toRem(39);
+
+      &__heading {
+        @include flex(flex-start, center, toRem(64));
+        &__text {
+          font-family: var(--font-inter);
+          font-size: toRem(14);
+          font-weight: 500;
+          line-height: toRem(20);
+          text-align: left;
+          color: #000000;
+          text-transform: uppercase;
+
+          &.txn {
+            width: toRem(85);
+          }
+
+          &.action {
+            width: toRem(92);
+          }
+
+          &.token {
+            width: toRem(174);
+          }
+
+          &.from {
+            width: toRem(80);
+          }
+
+          &.to {
+            width: toRem(210);
+          }
+
+          &.value {
+            width: toRem(51);
+          }
+
+          &.status {
+            width: toRem(87);
+          }
+        }
+      }
+
+      &__row {
+        @include flex(flex-start, center, toRem(64));
+        margin-top: toRem(15);
+
+        &__text {
+          font-family: var(--font-inter);
+          font-size: toRem(13.5);
+          font-weight: 500;
+          line-height: toRem(20);
+          text-align: left;
+          text-decoration-line: underline;
+          color: #00af7e;
+
+          &.txn {
+            width: toRem(85);
+          }
+
+          &.from {
+            width: toRem(80);
+          }
+
+          &.to {
+            width: toRem(210);
+          }
+
+          &.value {
+            width: toRem(51);
+            color: #000;
+            font-family: var(--font-inter);
+            font-size: toRem(14);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration: none;
+          }
+        }
+
+        &__action {
+          padding: toRem(5) toRem(8);
+          text-align: center;
+          border-radius: toRem(100);
+          background: #cce7ff;
+          color: #000000;
+          width: toRem(92);
+
+          font-size: toRem(13.5);
+          line-height: toRem(20);
+        }
+
+        &__tokenWrapper {
+          @include flex(flex-start, center, toRem(5));
+          width: toRem(174);
+
+          &__token {
+            width: toRem(24);
+            height: toRem(24);
+          }
+
+          &__text {
+            color: #000;
+            font-family: var(--font-inter);
+            font-size: toRem(14);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #000000;
+          }
+        }
+
+        &__status {
+          padding: toRem(5) toRem(8);
+          text-align: center;
+          border-radius: toRem(100);
+          background: #ccfff0;
+          color: #000000;
+          font-size: toRem(13.5);
+          line-height: toRem(20);
+          width: toRem(92);
+        }
+      }
+    }
   }
 }
