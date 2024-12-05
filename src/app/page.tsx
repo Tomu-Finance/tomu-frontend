@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import '../styles/pages/Portfolio.scss';
 import eye from '../assets/svgs/eye.svg';
 import send from '../assets/svgs/send.svg';
@@ -11,6 +13,12 @@ import depositIcon from '../assets/svgs/deposit.svg';
 import withdraw from '../assets/svgs/withdrawal.svg';
 
 const HomePage = () => {
+  const [activeTab, setActiveTab] = useState('onOfframp');
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div className="portfolio">
       <div className="portfolio__top">
@@ -259,7 +267,91 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="portfolio__bottom"></div>
+      <div className="portfolio__bottom">
+        <div className="portfolio__bottom__top">
+          <p className="portfolio__bottom__top__heading">Transaction History</p>
+          <div className="portfolio__bottom__top__right">
+            <div
+              className={`portfolio__bottom__top__right__tab left ${
+                activeTab === 'onOfframp' ? 'active' : ''
+              }`}
+              onClick={() => handleTabClick('onOfframp')}
+            >
+              <p
+                className={`portfolio__bottom__top__right__tab__text  ${
+                  activeTab === 'onOfframp' ? 'active' : ''
+                }`}
+              >
+                On/Offramp
+              </p>
+            </div>
+            <div
+              className={`portfolio__bottom__top__right__tab right ${
+                activeTab === 'offchain' ? 'active' : ''
+              }`}
+              onClick={() => handleTabClick('offchain')}
+            >
+              <p
+                className={`portfolio__bottom__top__right__tab__text  ${
+                  activeTab === 'offchain' ? 'active' : ''
+                }`}
+              >
+                Offchain activities
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="portfolio__bottom__table">
+          <div className="portfolio__bottom__table__heading">
+            <p className="portfolio__bottom__table__heading__text txn">
+              Txn Hash
+            </p>
+            <p className="portfolio__bottom__table__heading__text action">
+              Action
+            </p>
+            <p className="portfolio__bottom__table__heading__text token">
+              Token
+            </p>
+            <p className="portfolio__bottom__table__heading__text from">From</p>
+            <p className="portfolio__bottom__table__heading__text to">To</p>
+            <p className="portfolio__bottom__table__heading__text value">
+              Value
+            </p>
+            <p className="portfolio__bottom__table__heading__text status">
+              Status
+            </p>
+          </div>
+          <div className="portfolio__bottom__table__row">
+            <p className="portfolio__bottom__table__row__text txn">
+              0x9a...6e87
+            </p>
+            <div className="portfolio__bottom__table__row__action">
+              Withdrawal
+            </div>
+            <div className="portfolio__bottom__table__row__tokenWrapper">
+              <Image
+                className="portfolio__bottom__table__row__tokenWrapper__token"
+                src={tecImage}
+                alt="token icon"
+              />
+              <p className="portfolio__bottom__table__row__tokenWrapper__text">
+                TEC Token (as USDC)
+              </p>
+            </div>
+            <p className="portfolio__bottom__table__row__text from">
+              0x9a...6e87
+            </p>
+            <p className="portfolio__bottom__table__row__text to">
+              0x9a...6e87 (fiat disbursement)
+            </p>
+            <p className="portfolio__bottom__table__row__text value">$12.715</p>
+            <div className="portfolio__bottom__table__row__status">
+              Successful
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
