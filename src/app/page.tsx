@@ -43,7 +43,7 @@ const HomePage = () => {
               </p>
               <div className="portfolio__top__left__left__increase">2.58%+</div>
               <div className="portfolio__top__left__left__buttonWrapper">
-                <button className="portfolio__top__left__left__buttonWrapper__button withdraw">
+                <button className="portfolio__top__left__left__buttonWrapper__button debit">
                   <Image
                     src={send}
                     alt="send icon"

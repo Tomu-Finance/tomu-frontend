@@ -1,0 +1,199 @@
+@use '../../styles/main.scss' as *;
+
+.withdraw {
+  min-width: 100%;
+  min-height: 100vh;
+  padding-top: toRem(55);
+
+  &__title {
+    font-family: var(--font-inter);
+    font-size: toRem(20);
+    font-weight: 500;
+    line-height: toRem(16);
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    margin-bottom: toRem(21);
+  }
+
+  &__box {
+    width: toRem(437);
+    height: toRem(517);
+    border-radius: toRem(20);
+    border: toRem(0.8) solid #c0d3ce;
+    margin: 0 auto;
+
+    padding-top: toRem(27);
+    padding-left: toRem(40);
+    padding-right: toRem(34);
+    padding-bottom: toRem(40);
+
+    &__heading {
+      font-family: var(--font-inter);
+      font-size: toRem(16);
+      font-weight: 500;
+      line-height: toRem(16);
+      text-align: left;
+      color: #000000;
+      padding-bottom: toRem(11);
+    }
+
+    &__top {
+      @include flex_col(toRem(25));
+
+      &__first {
+        @include flex(flex-start, center, toRem(11));
+      }
+
+      &__second {
+        @include flex(flex-start, center, toRem(15));
+
+        &__input {
+          box-sizing: border-box;
+          width: toRem(224);
+          height: toRem(45);
+          border-radius: toRem(100);
+          outline: none;
+          border: toRem(0.8) solid #c0d3ce;
+          padding-top: toRem(14);
+          padding-right: toRem(20);
+          padding-bottom: toRem(14);
+          padding-left: toRem(15);
+          background-color: transparent;
+
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-weight: 400;
+          line-height: toRem(16);
+          text-align: left;
+          color: #00140f;
+
+          &::placeholder {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(16);
+            text-align: left;
+            color: #8a9995;
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      padding-top: toRem(27);
+
+      &__heading {
+        font-family: var(--font-inter);
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: toRem(16);
+        text-align: left;
+        color: #000000;
+        padding-bottom: toRem(15);
+        text-align: left;
+      }
+
+      &__wrapper {
+        @include flex_col(toRem(20));
+
+        &__tab {
+          width: toRem(234);
+          height: toRem(45);
+          padding: toRem(5) toRem(6);
+          border-radius: toRem(100);
+          border: toRem(0.8) solid #c0d3ce;
+          display: flex;
+          align-items: center;
+          gap: toRem(14);
+
+          &__wallet {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(16);
+            color: #000000;
+            text-align: center;
+            cursor: pointer;
+
+            // width: toRem(93);
+
+            &.active {
+              width: toRem(93);
+              height: toRem(34);
+              background-color: #00e5a4;
+              border: toRem(3) solid #00af7e;
+              border-radius: toRem(100);
+              box-sizing: border-box;
+              padding-top: toRem(7);
+            }
+          }
+
+          &__transfer {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(16);
+            color: #000000;
+            text-align: center;
+            cursor: pointer;
+
+            // width: toRem(105);
+          }
+        }
+
+        &__input {
+          box-sizing: border-box;
+          width: 100%;
+          height: toRem(45);
+          border-radius: toRem(100);
+          outline: none;
+          border: toRem(0.8) solid #c0d3ce;
+          padding-top: toRem(14);
+          padding-right: toRem(20);
+          padding-bottom: toRem(14);
+          padding-left: toRem(15);
+          background-color: transparent;
+
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-weight: 400;
+          line-height: toRem(16);
+          text-align: left;
+          color: #00140f;
+
+          &::placeholder {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(16);
+            text-align: left;
+            color: #8a9995;
+          }
+        }
+
+        &__button {
+          margin-top: toRem(10);
+
+          width: 100%;
+          height: toRem(44);
+          border-radius: toRem(100);
+          outline: none;
+
+          background-color: #00e5a4;
+          border: toRem(3) solid #00af7e;
+          color: #00140f;
+
+          font-family: Inter;
+          font-size: toRem(16);
+          font-weight: 400;
+          line-height: toRem(16);
+          text-align: center;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
