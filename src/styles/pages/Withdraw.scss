@@ -4,6 +4,7 @@
   min-width: 100%;
   min-height: 100vh;
   padding-top: toRem(55);
+  padding-bottom: toRem(113);
 
   &__title {
     font-family: var(--font-inter);
@@ -19,7 +20,7 @@
 
   &__box {
     width: toRem(437);
-    height: toRem(517);
+    min-height: toRem(517);
     border-radius: toRem(20);
     border: toRem(0.8) solid #c0d3ce;
     margin: 0 auto;
@@ -28,6 +29,118 @@
     padding-left: toRem(40);
     padding-right: toRem(34);
     padding-bottom: toRem(40);
+
+    &__success {
+      padding-top: toRem(17);
+      display: flex;
+      flex-direction: column;
+
+      &__icon {
+        width: toRem(64);
+        height: toRem(64);
+        margin: 0 auto;
+      }
+
+      &__heading {
+        font-family: var(--font-inter);
+        font-size: toRem(20);
+        font-weight: 500;
+        line-height: toRem(20);
+        text-align: left;
+        color: #000000;
+        margin-top: toRem(32);
+      }
+
+      &__box {
+        margin-top: toRem(27);
+        @include flex_col(toRem(35));
+
+        &__wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &__title {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(20);
+            text-align: left;
+            color: #000000;
+          }
+
+          &__content {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(20);
+            text-align: left;
+            color: #8a9995;
+          }
+
+          &__status {
+            box-sizing: border-box;
+            height: toRem(24);
+            width: fit-content;
+            padding-left: toRem(8);
+            padding-right: toRem(8);
+            border-radius: toRem(100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: var(--font-inter);
+            font-size: toRem(13);
+            font-weight: 400;
+            line-height: toRem(20);
+            text-align: center;
+
+            &.successful {
+              color: #00996e;
+              background-color: #ccfff1;
+            }
+          }
+
+          &__button {
+            width: 100%;
+            height: toRem(44);
+            border-radius: toRem(100);
+            outline: none;
+
+            background-color: #00e5a4;
+            border: toRem(3) solid #00af7e;
+            color: #00140f;
+
+            font-family: Inter;
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(16);
+            text-align: center;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: toRem(10);
+
+            &__text {
+              font-family: var(--font-inter);
+              font-size: toRem(16);
+              font-weight: 400;
+              line-height: toRem(16);
+              text-align: center;
+              color: #00140f;
+            }
+
+            &__icon {
+              width: toRem(20);
+              height: toRem(20);
+            }
+          }
+        }
+      }
+    }
 
     &__heading {
       font-family: var(--font-inter);
@@ -116,6 +229,7 @@
             color: #000000;
             text-align: center;
             cursor: pointer;
+            padding-left: toRem(20);
 
             // width: toRem(93);
 
@@ -127,6 +241,7 @@
               border-radius: toRem(100);
               box-sizing: border-box;
               padding-top: toRem(7);
+              padding-left: 0;
             }
           }
 
@@ -139,7 +254,16 @@
             text-align: center;
             cursor: pointer;
 
-            // width: toRem(105);
+            &.active {
+              width: toRem(131);
+              height: toRem(34);
+              background-color: #00e5a4;
+              border: toRem(3) solid #00af7e;
+              border-radius: toRem(100);
+              box-sizing: border-box;
+              padding-top: toRem(7);
+              margin-left: toRem(14);
+            }
           }
         }
 
