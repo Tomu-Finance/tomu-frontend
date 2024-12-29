@@ -1,0 +1,319 @@
+@use '../../styles/main.scss' as *;
+
+.depositPage {
+  min-width: 100%;
+  min-height: 100vh;
+  padding-top: toRem(55);
+  padding-bottom: toRem(113);
+
+  &__heading {
+    font-family: var(--font-inter);
+    font-size: toRem(20);
+    font-weight: 500;
+    line-height: toRem(16);
+    text-align: left;
+    text-align: center;
+    margin-bottom: toRem(21);
+  }
+
+  &__box {
+    width: toRem(437);
+    min-height: toRem(447);
+    border-radius: toRem(20);
+    border: toRem(0.8) solid #c0d3ce;
+    margin: 0 auto;
+
+    padding-top: toRem(25);
+    padding-left: toRem(40);
+    padding-right: toRem(40);
+    padding-bottom: toRem(31);
+
+    &__tab {
+      width: toRem(200);
+      height: toRem(45);
+      padding: toRem(5) toRem(6);
+      border-radius: toRem(100);
+      border: toRem(0.8) solid #c0d3ce;
+      display: flex;
+      align-items: center;
+      gap: toRem(14);
+      margin: 0 auto;
+
+      &__fiat {
+        font-family: var(--font-inter);
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: toRem(16);
+        color: #000000;
+        text-align: center;
+        cursor: pointer;
+        padding-left: toRem(24);
+
+        &.active {
+          width: toRem(93);
+          height: toRem(34);
+          background-color: #00e5a4;
+          border: toRem(3) solid #00af7e;
+          border-radius: toRem(100);
+          box-sizing: border-box;
+          padding-top: toRem(7);
+          padding-left: 0;
+        }
+      }
+
+      &__crypto {
+        font-family: var(--font-inter);
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: toRem(16);
+        color: #000000;
+        text-align: center;
+        cursor: pointer;
+        padding-left: toRem(7);
+
+        &.active {
+          width: toRem(93);
+          height: toRem(34);
+          background-color: #00e5a4;
+          border: toRem(3) solid #00af7e;
+          border-radius: toRem(100);
+          box-sizing: border-box;
+          padding-top: toRem(7);
+          margin-left: toRem(35);
+        }
+      }
+    }
+
+    &__actions {
+      margin-top: toRem(32);
+      @include flex_col(toRem(13));
+
+      &__heading {
+        font-family: var(--font-inter);
+        font-size: toRem(18);
+        font-weight: 500;
+        line-height: toRem(16);
+        text-align: left;
+        color: #000000;
+      }
+
+      &__tab {
+        width: toRem(252);
+        height: toRem(45);
+        padding: toRem(5) toRem(6);
+        border-radius: toRem(100);
+        border: toRem(0.8) solid #c0d3ce;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+
+        &__wallet {
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-weight: 500;
+          line-height: toRem(16);
+          color: #000000;
+          text-align: center;
+          cursor: pointer;
+          width: toRem(135);
+          //   padding-left: toRem(11.5);
+
+          &.active {
+            width: toRem(135);
+            height: toRem(34);
+            background-color: #00e5a4;
+            border: toRem(3) solid #00af7e;
+            border-radius: toRem(100);
+            box-sizing: border-box;
+            padding-top: toRem(7);
+            padding-left: 0;
+          }
+        }
+
+        &__protocol {
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-weight: 500;
+          line-height: toRem(16);
+          color: #000000;
+          text-align: center;
+          cursor: pointer;
+          padding-left: toRem(7);
+          margin-left: toRem(14);
+
+          &.active {
+            width: toRem(99);
+            height: toRem(34);
+            background-color: #00e5a4;
+            border: toRem(3) solid #00af7e;
+            border-radius: toRem(100);
+            box-sizing: border-box;
+            padding-top: toRem(7);
+            // margin-left: toRem(35);
+          }
+        }
+      }
+    }
+
+    &__info {
+      margin-top: toRem(24);
+
+      &__wallet {
+        width: toRem(363);
+        height: toRem(151);
+        padding-top: toRem(13);
+        padding-left: toRem(15);
+        padding-right: toRem(15);
+        padding-bottom: toRem(11);
+        background-color: #ffffff;
+        border-radius: toRem(10);
+
+        &__top {
+          @include flex(flex-start, center, toRem(10));
+
+          &__address {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(16);
+            text-align: left;
+            color: #000000;
+          }
+
+          &__copy {
+            width: toRem(20);
+            height: toRem(20);
+            cursor: pointer;
+          }
+        }
+
+        &__instructions {
+          padding-top: toRem(11);
+
+          font-family: var(--font-inter);
+          font-size: toRem(14);
+          font-weight: 400;
+          line-height: toRem(20);
+          text-align: left;
+          color: #000000;
+          width: toRem(310);
+
+          span {
+            font-family: var(--font-inter);
+            font-size: toRem(14);
+            font-weight: 500;
+            line-height: toRem(20);
+            color: #00af7e;
+          }
+        }
+      }
+
+      &__details {
+        margin-top: toRem(14);
+        @include flex_col(toRem(19));
+
+        &__wrapper {
+          @include flex_col(toRem(7));
+
+          &.small {
+            @include flex_col(toRem(5));
+          }
+
+          &__title {
+            font-family: var(--font-inter);
+            font-size: toRem(18);
+            font-weight: 500;
+            line-height: toRem(16);
+            text-align: left;
+            color: #000000;
+          }
+
+          &__heading {
+            font-family: Inter;
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(20);
+            text-align: left;
+            color: #000000;
+          }
+
+          &__sub {
+            font-family: var(--font-inter);
+            font-size: toRem(14);
+            font-weight: 400;
+            line-height: toRem(20);
+            text-align: left;
+            color: #000000;
+          }
+        }
+
+        &__text {
+          font-family: Inter;
+          font-size: toRem(16);
+          font-weight: 400;
+          line-height: toRem(20);
+          text-align: left;
+          color: #000000;
+
+          span {
+            font-family: Inter;
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(20);
+            text-align: left;
+            color: #000000;
+          }
+        }
+
+        &__group {
+          @include flex(flex-start, center, toRem(5));
+
+          &__text {
+            font-family: Inter;
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(20);
+            text-align: left;
+            color: #000000;
+
+            span {
+              font-family: Inter;
+              font-size: toRem(16);
+              font-weight: 400;
+              line-height: toRem(20);
+              text-align: left;
+              color: #00af7e;
+            }
+          }
+
+          &__icon {
+            width: toRem(20);
+            height: toRem(20);
+            cursor: pointer;
+          }
+        }
+
+        &__button {
+          margin-top: toRem(10);
+
+          width: 100%;
+          height: toRem(44);
+          border-radius: toRem(100);
+          outline: none;
+
+          background-color: #00e5a4;
+          border: toRem(3) solid #00af7e;
+          color: #00140f;
+
+          font-family: Inter;
+          font-size: toRem(16);
+          font-weight: 400;
+          line-height: toRem(16);
+          text-align: center;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
