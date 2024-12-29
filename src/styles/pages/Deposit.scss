@@ -160,13 +160,30 @@
 
       &__wallet {
         width: toRem(363);
-        height: toRem(151);
+        height: fit-content;
         padding-top: toRem(13);
         padding-left: toRem(15);
         padding-right: toRem(15);
         padding-bottom: toRem(11);
         background-color: #ffffff;
         border-radius: toRem(10);
+
+        &__heading {
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-weight: 500;
+          line-height: toRem(16);
+          text-align: left;
+
+          span {
+            font-family: var(--font-inter);
+            font-size: toRem(16);
+            font-weight: 500;
+            line-height: toRem(16);
+            text-align: left;
+            color: #00af7e;
+          }
+        }
 
         &__top {
           @include flex(flex-start, center, toRem(10));
@@ -312,6 +329,83 @@
           text-align: center;
 
           cursor: pointer;
+        }
+      }
+
+      &__chain {
+        margin-top: toRem(20);
+
+        &__heading {
+          font-family: var(--font-inter);
+          font-size: toRem(16);
+          font-weight: 500;
+          line-height: toRem(16);
+          text-align: left;
+          color: #000000;
+        }
+
+        &__column {
+          margin-top: toRem(11);
+          @include flex_col(toRem(25));
+
+          &__wrapper {
+            @include flex(flex-start, center, toRem(11));
+
+            &.lg {
+              @include flex(flex-start, center, toRem(15));
+            }
+
+            &__input {
+              box-sizing: border-box;
+              width: toRem(224);
+              height: toRem(45);
+              border-radius: toRem(100);
+              outline: none;
+              border: toRem(0.8) solid #c0d3ce;
+              padding-top: toRem(14);
+              padding-right: toRem(20);
+              padding-bottom: toRem(14);
+              padding-left: toRem(15);
+              background-color: transparent;
+
+              font-family: var(--font-inter);
+              font-size: toRem(16);
+              font-weight: 400;
+              line-height: toRem(16);
+              text-align: left;
+              color: #00140f;
+
+              &::placeholder {
+                font-family: var(--font-inter);
+                font-size: toRem(16);
+                font-weight: 400;
+                line-height: toRem(16);
+                text-align: left;
+                color: #8a9995;
+              }
+            }
+          }
+
+          &__button {
+            margin-top: toRem(9);
+
+            width: 100%;
+            height: toRem(44);
+            border-radius: toRem(100);
+            outline: none;
+
+            background-color: #00e5a4;
+            border: toRem(3) solid #00af7e;
+            color: #00140f;
+
+            font-family: Inter;
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(16);
+            text-align: center;
+
+            cursor: pointer;
+          }
         }
       }
     }
