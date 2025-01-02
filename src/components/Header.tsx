@@ -1,11 +1,21 @@
-import React from 'react';
-import '../styles/components/Header.scss';
-import Select from './Select';
-import settingsIcon from '../assets/svgs/settings.svg';
-import notificationsIcon from '../assets/svgs/notification.svg';
-import Image from 'next/image';
+"use client";
+
+import React from "react";
+import "../styles/components/Header.scss";
+import Select from "./Select";
+import settingsIcon from "../assets/svgs/settings.svg";
+import notificationsIcon from "../assets/svgs/notification.svg";
+import Image from "next/image";
+
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
+
+  const handleTabClick = () => {
+    router.push("/settings");
+  };
+
   return (
     <div className="header">
       <input
@@ -31,6 +41,7 @@ const Header = () => {
           src={settingsIcon}
           alt="settings icon"
           className="header__right__icon settings"
+          onClick={handleTabClick}
         />
         <Image
           src={notificationsIcon}

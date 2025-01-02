@@ -1,13 +1,13 @@
-import React from 'react';
-import '../styles/components/Sidebar.scss';
-import logo from '../assets/svgs/logo.svg';
-import grid from '../assets/svgs/collapse.svg';
-import portfolioIcon from '../assets/svgs/portfolio.svg';
-import withdrawIcon from '../assets/svgs/withdrawal.svg';
-import depositIcon from '../assets/svgs/deposit.svg';
-import exploreIcon from '../assets/svgs/explore.svg';
-import Image from 'next/image';
-import SidebarNavigationTab from './SidebarNavigationTab';
+import React from "react";
+import "../styles/components/Sidebar.scss";
+import logo from "../assets/svgs/logo.svg";
+import grid from "../assets/svgs/collapse.svg";
+import portfolioIcon from "../assets/svgs/portfolio.svg";
+import withdrawIcon from "../assets/svgs/withdrawal.svg";
+import depositIcon from "../assets/svgs/deposit.svg";
+import exploreIcon from "../assets/svgs/explore.svg";
+import Image from "next/image";
+import SidebarNavigationTab from "./SidebarNavigationTab";
 
 const Sidebar = () => {
   return (

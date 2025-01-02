@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React from 'react';
-import '../styles/components/Sidebar.scss';
-import { useRouter, usePathname } from 'next/navigation';
+import Image from "next/image";
+import React from "react";
+import "../styles/components/Sidebar.scss";
+import { useRouter, usePathname } from "next/navigation";
 
 interface SidebarNavigationTabProps {
   icon: string;
@@ -28,7 +28,7 @@ const SidebarNavigationTab = ({
   return (
     <div
       className={`sidebar__navigation__tab ${
-        pathName === route ? 'active' : ''
+        pathName === route ? "active" : ""
       }`}
       onClick={() => handleTabClick(route)}
     >
