@@ -102,6 +102,10 @@
     width: 23rem;
     height: toRem(517);
 
+    .back-icon {
+      cursor: pointer;
+    }
+
     h2 {
       font-weight: 500;
       font-size: toRem(16);

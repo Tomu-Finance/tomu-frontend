@@ -6,6 +6,7 @@ import address from "../../assets/svgs/address.svg";
 import copy from "../../assets/svgs/copy.svg";
 import passcode from "../../assets/svgs/passcode.svg";
 import phraseIcon from "../../assets/svgs/key.svg";
+import backIcon from "../../assets/svgs/icon-arrow-left.svg";
 import { useState } from "react";
 
 export default function Settings() {
@@ -13,6 +14,10 @@ export default function Settings() {
 
   const handleClick = () => {
     setVisibleElement(false);
+  };
+
+  const handleBackClick = () => {
+    setVisibleElement(true);
   };
 
   return (
@@ -47,6 +52,9 @@ export default function Settings() {
         </div>
       ) : (
         <div className="settings-page___passcode">
+          <div className="back-icon" onClick={handleBackClick}>
+            <Image src={backIcon} alt="back-icon" />
+          </div>
           <h2>Update Passcode</h2>
 
           <div className="form_contain">
