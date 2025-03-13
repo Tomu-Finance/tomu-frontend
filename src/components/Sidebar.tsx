@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/components/Sidebar.scss";
-import logo from "../assets/svgs/logo.svg";
+import logo from "../assets/images/logo.png";
 import grid from "../assets/svgs/collapse.svg";
 import portfolioIcon from "../assets/svgs/portfolio.svg";
 import withdrawIcon from "../assets/svgs/withdrawal.svg";
