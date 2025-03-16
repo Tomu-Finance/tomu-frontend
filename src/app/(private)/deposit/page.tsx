@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import '../../styles/pages/Deposit.scss';
+import '../../../styles/pages/Deposit.scss';
 import Image from 'next/image';
-import copy from '../../assets/svgs/copy.svg';
+import copy from '../../../assets/svgs/copy.svg';
 import Select from '@/components/Select';
 
 type ActiveModeTab = 'fiat' | 'crypto';

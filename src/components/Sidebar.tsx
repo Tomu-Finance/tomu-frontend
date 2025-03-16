@@ -1,15 +1,29 @@
-import React from "react";
-import "../styles/components/Sidebar.scss";
-import logo from "../assets/svgs/logo.svg";
-import grid from "../assets/svgs/collapse.svg";
-import portfolioIcon from "../assets/svgs/portfolio.svg";
-import withdrawIcon from "../assets/svgs/withdrawal.svg";
-import depositIcon from "../assets/svgs/deposit.svg";
-import exploreIcon from "../assets/svgs/explore.svg";
-import Image from "next/image";
-import SidebarNavigationTab from "./SidebarNavigationTab";
+"use client"
+
+import React from "react"
+import "../styles/components/Sidebar.scss"
+import logo from "../assets/svgs/logo.svg"
+import grid from "../assets/svgs/collapse.svg"
+import portfolioIcon from "../assets/svgs/portfolio.svg"
+import withdrawIcon from "../assets/svgs/withdrawal.svg"
+import depositIcon from "../assets/svgs/deposit.svg"
+import exploreIcon from "../assets/svgs/explore.svg"
+import Image from "next/image"
+
+import SidebarNavigationTab from "./SidebarNavigationTab"
+import { usePrivy } from "@privy-io/react-auth"
 
 const Sidebar = () => {
+  const { logout, authenticated } = usePrivy()
+
+  const handleLogout = () => {
+    try {
+      logout().then(() => (window.location.href = "/sign-in"))
+    } catch (error) {
+      console.error("Error logging out", error)
+    }
+  }
+
   return (
     <div className="sidebar">
       <div className="sidebar__brand">
@@ -42,8 +56,15 @@ const Sidebar = () => {
           route="/explore"
         />
       </div>
-    </div>
-  );
-};
 
-export default Sidebar;
+      {/* temporary logout function until logout page is handled */}
+      {authenticated && (
+        <button type="button" className="" onClick={handleLogout}>
+          logout
+        </button>
+      )}
+    </div>
+  )
+}
+
+export default Sidebar

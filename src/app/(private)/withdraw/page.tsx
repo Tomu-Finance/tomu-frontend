@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import '../../styles/pages/Withdraw.scss';
+import '../../../styles/pages/Withdraw.scss';
 import Select from '@/components/Select';
-import successful from '../../assets/svgs/successful.svg';
-import link from '../../assets/svgs/link.svg';
+import successful from '../../../assets/svgs/successful.svg';
+import link from '../../../assets/svgs/link.svg'
 import Image from 'next/image';
 
 type ActiveTab = 'wallet' | 'bankTransfer';
