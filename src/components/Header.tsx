@@ -6,12 +6,14 @@ import Select from "./Select";
 import settingsIcon from "../assets/svgs/settings.svg";
 import notificationsIcon from "../assets/svgs/notification.svg";
 import Image from "next/image";
-
+import { Jazzicon } from "@ukstv/jazzicon-react";
 import { useRouter } from "next/navigation";
+import { usePrivy } from "@privy-io/react-auth";
+import { ellipsizeAddress } from "@/utils/helpers/format";
 
 const Header = () => {
   const router = useRouter();
-
+  const { login, authenticated, user, logout } = usePrivy();
   const handleTabClick = () => {
     router.push("/settings");
   };
@@ -48,7 +50,19 @@ const Header = () => {
           alt="notification icon"
           className="header__right__icon"
         />
-        <button className="header__right__button">Launch app</button>
+        {authenticated ? (
+          <div className="header__right__user" onClick={logout}>
+            <Jazzicon
+              address={user?.wallet?.address || ""}
+              className="header__right__user__image"
+            />
+            <span>{ellipsizeAddress(user?.wallet?.address || "")}</span>
+          </div>
+        ) : (
+          <button className="header__right__button" onClick={login}>
+            Launch app
+          </button>
+        )}
       </div>
     </div>
   );
