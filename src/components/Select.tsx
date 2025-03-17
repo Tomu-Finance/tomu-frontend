@@ -1,15 +1,28 @@
-import React from 'react';
-import '../styles/components/Select.scss';
+import React from "react";
+import "../styles/components/Select.scss";
 
-interface SelectProps {
+interface SelectProps extends React.ComponentPropsWithoutRef<"select"> {
   text: string;
   height: number;
   width: number;
   iconColor: string;
   type?: string;
+  options?: Array<{
+    value: string | number;
+    label: string | number;
+  }>;
 }
 
-const Select = ({ text, height, width, iconColor, type }: SelectProps) => {
+const Select = ({
+  text,
+  height,
+  width,
+  iconColor,
+  type,
+  options,
+  defaultValue,
+  ...props
+}: SelectProps) => {
   // Function to convert px to rem
   const pxToRem = (px: number) => `${px / 16}rem`;
 
@@ -17,9 +30,10 @@ const Select = ({ text, height, width, iconColor, type }: SelectProps) => {
     <div className="selectWrapper">
       <select
         className={`selectWrapper__select ${
-          type === 'dynamic' ? 'dynamic' : ''
+          type === "dynamic" ? "dynamic" : ""
         }`}
-        defaultValue=""
+        defaultValue={defaultValue ??  ""}
+        {...props}
         style={{
           height: pxToRem(height),
           width: pxToRem(width),
@@ -28,9 +42,12 @@ const Select = ({ text, height, width, iconColor, type }: SelectProps) => {
         <option value="" disabled>
           {text}
         </option>
-        <option value="category1">Option</option>
-        <option value="category2">Option</option>
-        <option value="category3">Option</option>
+        {options &&
+          options.map(({ value, label }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
       </select>
       <svg
         width="18"

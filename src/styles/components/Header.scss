@@ -1,4 +1,4 @@
-@use '../../styles/main.scss' as *;
+@use "../../styles/main.scss" as *;
 
 .header {
   background-color: $greenish-white;
@@ -61,7 +61,22 @@
         margin-left: toRem(18.46);
       }
     }
-
+    &__user {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: toRem(3) solid $bright-green-2;
+      border-radius: toRem(100);
+      padding: toRem(5) toRem(10);
+      cursor: pointer;
+      &__image {
+        width: toRem(34);
+        height: toRem(34);
+        border-radius: toRem(50%);
+        object-fit: cover;
+        margin-right: toRem(10);
+      }
+    }
     &__button {
       width: toRem(129);
       height: toRem(45);
