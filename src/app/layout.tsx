@@ -1,14 +1,10 @@
 "use client";
 
-
-import type { Metadata } from "next";
 import Providers from "@/providers"
 import { Inter } from "next/font/google";
 import "../styles/main.scss";
 import "../styles/pages/AppLayout.scss";
-import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-import { base } from "viem/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { defaultChain, supportedChains } from "@/utils/constants/chaints";
@@ -25,11 +21,11 @@ const inter = Inter({
   style: ["normal"],
 })
 
-export const metadata: Metadata = {
-  title: "Tomu",
-  description:
-    "Unified wallet with support for offramping/onramping operations.",
-}
+// export const metadata: Metadata = {
+//   title: "Tomu",
+//   description:
+//     "Unified wallet with support for offramping/onramping operations.",
+// }
 
 const queryClient = new QueryClient();
 

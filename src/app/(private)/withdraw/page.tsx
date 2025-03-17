@@ -1,10 +1,12 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import "../../styles/pages/Withdraw.scss";
+import "@styles/pages/Withdraw.scss";
 import Select from "@/components/Select";
-import successful from "../../assets/svgs/successful.svg";
-import link from "../../assets/svgs/link.svg";
+import successful from "@assets/successful.svg";
+import link from "@assets/link.svg";
 import Image from "next/image";
 import { supportedChains } from "@/utils/constants/chaints";
 import {
@@ -374,7 +376,7 @@ const Withdraw: React.FC = () => {
 
         setIsOrderCreated(true);
       }
-    } catch (e: any) {
+    } catch (e: unknown) {
       if (error) {
         setErrorMessage((error as BaseError).shortMessage || error!.message);
       } else {
@@ -407,7 +409,7 @@ const Withdraw: React.FC = () => {
           await createOrder();
         }
       }
-    } catch (e: any) {
+    } catch (e: unknown) {
       console.log(e, error);
       if (error) {
         setErrorMessage((error as BaseError).shortMessage || error!.message);
@@ -685,7 +687,7 @@ const Withdraw: React.FC = () => {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   required
-                  disabled={network === "" || asset === ""}
+                  disabled={network === "" || !asset?.address}
                   max={500}
                 />
               </div>

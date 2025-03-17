@@ -29,7 +29,8 @@ const SsoAuthenticationBox = () => {
   const handleInitOAuth = async () => {
     try {
       await initOAuth({ provider: "google" })
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error: unknown) {
       toast({
         message: "Error signing in. Please try again.",
       })

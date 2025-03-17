@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import * as z from "zod"
@@ -60,12 +61,13 @@ const VerifyCode = () => {
           })
           router.replace("/")
         })
-        .catch((error) => {
+        .catch(() => {
           toast({
             message: "Uh oh! Invalid Code",
             variant: "error",
           })
         })
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast({
         message: "Error signing in. Please try again.",
