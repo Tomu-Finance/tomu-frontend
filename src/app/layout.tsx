@@ -1,17 +1,17 @@
 "use client";
-import type { Metadata } from "next";
+
+import Providers from "@/providers"
 import { Inter } from "next/font/google";
 import "../styles/main.scss";
 import "../styles/pages/AppLayout.scss";
-import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-import { base } from "viem/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { defaultChain, supportedChains } from "@/utils/constants/chaints";
 import { WagmiProvider } from "@privy-io/wagmi";
 import { config } from "@/utils/config";
 import { BiconomyProvider } from "@biconomy/use-aa";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -19,13 +19,20 @@ const inter = Inter({
   display: "swap",
   adjustFontFallback: false,
   style: ["normal"],
-});
+})
+
+// export const metadata: Metadata = {
+//   title: "Tomu",
+//   description:
+//     "Unified wallet with support for offramping/onramping operations.",
+// }
+
 const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   const biconomyPaymasterApiKey =
     process.env.NEXT_PUBLIC_PAYMASTER_API_KEY || "";
@@ -54,14 +61,15 @@ export default function RootLayout({
                 }}
                 queryClient={queryClient}
               >
-                <Header />
-                <Sidebar />
-                <main className="appLayout__main">{children}</main>
+                <Providers>
+                  <Sidebar />
+                  {children}
+                </Providers>
               </BiconomyProvider>
             </WagmiProvider>
           </QueryClientProvider>
         </PrivyProvider>
       </body>
     </html>
-  );
+  )
 }

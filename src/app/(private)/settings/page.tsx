@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import "../../styles/pages/Settings.scss";
-import address from "../../assets/svgs/address.svg";
-import copy from "../../assets/svgs/copy.svg";
-import passcode from "../../assets/svgs/passcode.svg";
-import phraseIcon from "../../assets/svgs/key.svg";
-import backIcon from "../../assets/svgs/icon-arrow-left.svg";
-import { useState } from "react";
+import Image from "next/image"
+import "../../../styles/pages/Settings.scss"
+import address from "../../../assets/svgs/address.svg"
+import copy from "../../../assets/svgs/copy.svg"
+import passcode from "../../../assets/svgs/passcode.svg"
+import phraseIcon from "../../../assets/svgs/key.svg"
+import backIcon from "../../../assets/svgs/icon-arrow-left.svg"
+import { useState } from "react"
 
 export default function Settings() {
-  const [visibleElement, setVisibleElement] = useState(true);
+  const [visibleElement, setVisibleElement] = useState(true)
 
   const handleClick = () => {
-    setVisibleElement(false);
-  };
+    setVisibleElement(false)
+  }
 
   const handleBackClick = () => {
-    setVisibleElement(true);
-  };
+    setVisibleElement(true)
+  }
 
   return (
     <div className="settings-page">
@@ -76,5 +76,5 @@ export default function Settings() {
         </div>
       )}
     </div>
-  );
+  )
 }

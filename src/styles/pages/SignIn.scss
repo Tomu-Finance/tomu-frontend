@@ -1,0 +1,211 @@
+@use "../../styles/main.scss" as *;
+
+.signInPage {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: toRem(9);
+  padding-bottom: toRem(9);
+  padding-left: toRem(11);
+  padding-right: toRem(11);
+
+  &>div {
+    height: 100%;
+    width: 100%;
+    border: toRem(0.8) solid $greenish-border;
+    padding-top: toRem(35);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: toRem(20);
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(24);
+    align-items: center;
+    justify-items: center;
+
+    &__logo {
+      &>img {
+        margin: 0 auto;
+      }
+    }
+
+    &__heading {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(14);
+      align-items: center;
+      justify-items: center;
+
+      &>h2 {
+        font-family: var(--font-inter);
+        font-size: toRem(32);
+        font-weight: 500;
+        line-height: toRem(16);
+        text-align: center;
+        color: $secondary-black;
+      }
+
+      &>p {
+        font-family: var(--font-inter);
+        font-size: toRem(16);
+        font-weight: 400;
+        line-height: toRem(16);
+        text-align: center;
+        color: $secondary-black;
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(14);
+      // margin-top: toRem(30);
+      width: toRem(320);
+      max-width: toRem(320);
+
+      &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: toRem(16);
+
+        &__signIn__text {
+          font-family: var(--font-inter);
+          font-weight: 500;
+          font-size: toRem(16);
+          line-height: toRem(16);
+        }
+
+        &__form__control {
+          position: relative;
+          width: 100%;
+
+          &>input {
+            position: inherit;
+            width: 100%;
+            border: toRem(0.8) solid $greenish-border;
+            border-radius: toRem(15);
+            padding: toRem(14) toRem(18);
+            outline: none;
+            background-color: transparent;
+            padding-right: toRem(65);
+            font-size: toRem(14);
+            font-family: var(--font-inter);
+
+            &::placeholder {
+              color: $greyish-placeholder;
+            }
+          }
+
+          &>.submitEmailButton {
+            cursor: pointer;
+            position: absolute;
+            right: toRem(10);
+            top: 50%;
+            transform: translateY(-50%);
+            color: $deep-blue;
+            font-size: toRem(14);
+            font-family: var(--font-inter);
+            font-weight: 500;
+            line-height: toRem(16);
+            background-color: transparent;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          &>.submitCodeButton {
+            margin-top: toRem(18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: toRem(8);
+            cursor: pointer;
+            width: 100%;
+            background-color: $primary-black;
+            color: $greenish-white;
+            padding: toRem(10) toRem(0);
+            font-size: toRem(14);
+            font-family: var(--font-inter);
+            font-weight: 500;
+            line-height: toRem(22);
+            border-radius: toRem(15);
+            border: toRem(3) solid $primary-black;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+
+      &__sso__actions__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: toRem(16);
+        width: 100%;
+
+        &__buttons {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: toRem(14);
+
+          &>button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: toRem(8);
+            cursor: pointer;
+            width: 100%;
+            background-color: $primary-black;
+            color: $greenish-white;
+            padding: toRem(10) toRem(0);
+            font-size: toRem(14);
+            font-family: var(--font-inter);
+            font-weight: 500;
+            line-height: toRem(22);
+            border-radius: toRem(15);
+            border: toRem(3) solid $primary-black;
+          }
+        }
+      }
+
+      &__more__options {
+        margin-top: toRem(16);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: toRem(14);
+
+        &__row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: toRem(6);
+  
+          & > p {
+            font-family: var(--font-inter);
+            font-weight: 400;
+            font-size: toRem(14);
+          }
+
+          & > button {
+            cursor: pointer;
+            text-decoration: underline;
+            font-family: var(--font-inter);
+            font-weight: 500;
+            font-size: toRem(14);
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

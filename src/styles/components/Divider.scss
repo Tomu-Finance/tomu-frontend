@@ -1,0 +1,39 @@
+@use "../../styles/main.scss" as *;
+
+.divider {
+  width: 80%;
+  height: toRem(0.8);
+  background-color: #8A9995;
+}
+
+.divider__withor {
+  width: 100%;
+
+  &>p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(6);
+    padding: 0 toRem(5);
+    color: $greenish-border;
+    font-family: var(--font-inter);
+    font-size: toRem(16);
+
+    &::before {
+      content: '';
+      flex: 1;
+      width: 100%;
+      height: toRem(0.8);
+      background-color: $greenish-border;
+    }
+
+    &::after {
+      content: '';
+      flex: 1;
+      width: 100%;
+      height: toRem(0.8);
+      background-color: $greenish-border;
+    }
+  }
+}
